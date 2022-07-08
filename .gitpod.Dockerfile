@@ -7,6 +7,10 @@ ENV PATH="$HOME/flutter/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_
 
 # Install Open JDK for android and other dependencies
 USER root
+
+# https://github.com/gitpod-io/workspace-images/issues/872#issuecomment-1178697219
+RUN sudo rm /etc/apt/sources.list.d/ungoogled_chromium.list
+
 RUN install-packages openjdk-8-jdk -y \
         libgtk-3-dev \
         libnss3-dev \
